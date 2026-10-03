@@ -1,4 +1,6 @@
+const availableSizes=["S","M","L","XL"];
 const products={signature:{name:'Signature Tee',price:2000,description:'The crown. The name. The original energy. A bold YardThreads graphic that speaks for itself.',colors:['black','white'],side:'front'},money:{name:'Money Tee',price:2500,description:'A statement on what we value. A subtle money detail meets an expressive full-size graphic.',colors:['blue','black','white'],side:'back'},shorts:{name:'Threads Shorts',price:3500,description:'Black shorts finished with white threads embroidery, an elastic waistband, and a drawstring.',colors:['black'],side:'front'}};
+for(const product of Object.values(products)){product.stock=Object.fromEntries(product.colors.map(color=>[color,Object.fromEntries(availableSizes.map(size=>[size,0]))]));}
 const names={black:'Black',white:'White',blue:'Sky blue'};
 const cards={signature:'black',money:'blue',shorts:'black'};
 const dialog=document.querySelector('dialog');let active='signature',color='black',side='front';
