@@ -4,6 +4,6 @@ function updateAddress(){document.querySelector('#alternate-fields').hidden=!alt
 function validate(){const field=alternate.checked?other:home;field.setCustomValidity(field.value.trim().length<8?'Enter the full street address or meeting place, including town and parish.':'');const digits=phone.value.replace(/\D/g,'');phone.setCustomValidity(digits.length<7||digits.length>15?'Enter a valid phone number with 7 to 15 digits, including the country code when needed.':'');return form.checkValidity();}
 alternate.addEventListener('change',updateAddress);[home,other,phone].forEach(input=>input.addEventListener('input',()=>input.setCustomValidity('')));updateAddress();
 form.addEventListener('submit',e=>e.preventDefault());
-document.querySelector('#review-delivery').addEventListener('click',()=>{const status=document.querySelector('#delivery-status');status.textContent='';if(!validate()){form.reportValidity();return;}status.textContent='Contact and delivery details are filled in. Nothing has been submitted; ordering is paused while items are out of stock.';});
+document.querySelector('#review-delivery').addEventListener('click',()=>{const status=document.querySelector('#delivery-status');status.textContent='';if(!validate()){form.reportValidity();return;}status.textContent='Contact and delivery details are filled in. Nothing has been submitted; checkout is disabled in test mode.';});
 window.yardthreadsDelivery={isComplete:validate};
 })();
