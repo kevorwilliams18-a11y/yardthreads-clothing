@@ -16,3 +16,4 @@ document.querySelector('.cart-open').addEventListener('click',()=>{renderCart();
 document.querySelector('.cart-close').addEventListener('click',()=>cartDialog.close());document.querySelector('.continue-shopping').addEventListener('click',()=>cartDialog.close());cartDialog.addEventListener('close',()=>{if(!document.querySelector('dialog[open]'))document.body.classList.remove('modal-open');});renderCart();
 
 try{const method=localStorage.getItem("yardthreads-payment-preference");document.querySelectorAll("[name=payment-method]").forEach(input=>{input.checked=input.value===method;input.addEventListener("change",()=>{try{localStorage.setItem("yardthreads-payment-preference",input.value)}catch{}})});}catch{}
+if(new URLSearchParams(location.search).get('cart')==='1'){cartDialog.showModal();document.body.classList.add('modal-open');}
