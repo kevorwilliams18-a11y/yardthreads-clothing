@@ -46,3 +46,6 @@
 
 /* Seat the straight stem into the wood, with a small metal ferrule. */
 .straight-hanger-stem{height:43px;width:3px;top:3px}.straight-hanger-stem:after{content:'';position:absolute;bottom:-1px;left:-1.5px;width:6px;height:7px;border-radius:1px 1px 2px 2px;background:linear-gradient(90deg,#7d8573,#e7ecdf 42%,#899579);box-shadow:0 1px 1px #26342055}@media(max-width:760px){.straight-hanger-stem{height:38px;top:2px}}
+
+/* YardThreads corner artwork: decorative and clear of the shopping controls. */
+.rail-home{position:relative;isolation:isolate}.yard-art{position:absolute;bottom:26px;width:clamp(170px,24vw,330px);pointer-events:none;user-select:none;z-index:0;opacity:.92}.yard-art img{width:100%;height:auto;display:block}.yard-art-left{left:1%;transform:rotate(-7deg)}.yard-art-right{right:1%;transform:rotate(7deg);width:clamp(165px,23vw,315px)}.rail-overline,.rail-caption,.rail-navigation,.rail-explore,.rail-all{position:relative;z-index:1}.wardrobe{z-index:1}@media(min-width:1500px){.yard-art-left{left:3%}.yard-art-right{right:3%}}@media(max-width:1000px){.yard-art{width:195px;bottom:30px;opacity:.75}.yard-art-left{left:-17px}.yard-art-right{right:-17px}}@media(max-width:600px){.yard-art{width:120px;bottom:12px;opacity:.32}.yard-art-left{left:-33px}.yard-art-right{right:-33px;bottom:22px}}
