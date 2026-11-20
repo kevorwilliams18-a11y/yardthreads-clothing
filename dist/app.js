@@ -16,3 +16,5 @@ document.querySelectorAll('[name=size]').forEach(input=>input.addEventListener('
 document.querySelectorAll('.product .swatch').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.product');card.querySelector('.stock-label').textContent=Object.values(products[card.dataset.product].stock[button.dataset.color]).some(count=>count>0)?'In stock':(card.dataset.product==='tote'?'Out of stock · One size':'Out of stock · S–XL');}));
 
 document.querySelector('.interior-preview').addEventListener('click',()=>{active='tote';color='black';side='back';renderDetail();dialog.showModal();document.body.classList.add('modal-open')});
+
+{const params=new URLSearchParams(location.search),requested=params.get('product'),shade=params.get('color');if(products[requested]){active=requested;color=products[requested].colors.includes(shade)?shade:products[requested].colors[0];side=products[requested].side;renderDetail();dialog.showModal();document.body.classList.add('modal-open');}}
